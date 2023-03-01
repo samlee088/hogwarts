@@ -3,14 +3,33 @@ h1 {
     background-color: brown;
 }
 
+.homePage {
+    background-color: black;
+
+}
+
 .homePage_backGround {
     display: flex;
     flex-direction: column;
     margin: auto;
-    max-width: 768px;
-    width: 80%;
+    width: 100%;
 }
 
 .homePage_selectHouseRouterButton {
+    margin-top: 50px;
+    padding-bottom: 200px;
+}
+
+.homePage_selectHouses {
     cursor: pointer;
+    background-color:aquamarine;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+.homePage_selectHouses:hover {
+    transform: scale(1.10);
 }

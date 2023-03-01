@@ -6,13 +6,13 @@ const HomePage = () => {
 
     return(
         <div className='homePage'>
-            <h1> Harry Potter Game </h1>
+            <h1> Hogwarts BattleGround </h1>
             <div className='homePage_backGround'>
-                <img className='homePage_backGround' src="https://images8.alphacoders.com/110/1102284.jpg" alt='harry potter homepage background'/>
+                <img className='homePage_backGround' src="https://i.pinimg.com/originals/ba/fc/48/bafc48a5c0ebd5bfc5282d07dd977047.jpg" alt='harry potter homepage background'/>
             </div>
             <div className='homePage_selectHouseRouterButton'>
                 <Link to='/SelectHouse'>
-            <button className='homePage_selectHouses'> Select House </button>
+                    <button className='homePage_selectHouses'> Select House </button>
                 </Link>
             </div>
         </div>
