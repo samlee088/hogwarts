@@ -7,33 +7,7 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      workouts {
-        _id
-        dayOfTheWeek
-        exerciseName
-        weight
-        sets
-        reps
-        other
-      }
+      house
     }
   }
-`
-export const QUERY_WORKOUTS = gql`
-query workouts {
-  workouts {
-    _id
-    username
-    email
-    workouts {
-      _id
-      dayOfTheWeek
-      exerciseName
-      weight
-      sets
-      reps
-      other
-    }
-  }
-}
 `

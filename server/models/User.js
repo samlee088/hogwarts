@@ -18,12 +18,10 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    workouts: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'Workout'
-        }
-    ],
+    house: {
+      type: String,
+      required: false,
+    },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true }} ,
 );

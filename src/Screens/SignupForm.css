@@ -1,0 +1,49 @@
+:root {
+    --black: #000000;
+    --blue: #26687d;
+    --off-white: #c7b99a;
+    --orange: #f8962e;
+    --purple: #412454;
+    --white: #ffffff;
+    --yellow: #fed346;
+  }
+
+
+
+.signUpForm_main {
+    background-color: white;
+    max-width: 400px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+
+
+.form-group {
+    color: var(--black);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+  
+  .form-control:focus,
+  .form-control:not(active) {
+    background-color: var(--orange);
+    border: none;
+    border-radius: 1000px;
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+  
+  .form-control:focus {
+    border: none;
+    box-shadow: none;
+  }
+  
+  .form-control::placeholder {
+    color: white;
+}

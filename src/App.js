@@ -7,6 +7,9 @@ import HomePage from './Screens/HomePage';
 import SelectHouse from './Screens/SelectHouse';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import Navbar from './Screens/NavBar';
+
+
 function App() {
 
   const httpLink = createHttpLink({
@@ -39,6 +42,8 @@ function App() {
     <ApolloProvider client={client}>
       <div className="App">
         <Router>
+          <>
+          <Navbar />
           <Routes>
             <Route
             path='/'
@@ -49,6 +54,7 @@ function App() {
             element={<SelectHouse/>}
             />
           </Routes>
+          </>
         </Router>
       </div>
     </ApolloProvider> 

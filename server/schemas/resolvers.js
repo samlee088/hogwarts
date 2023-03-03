@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Workout } = require('../models');
+const { User } = require('../models');
 const { signToken } = require('../utils/auth')
 
 const resolvers = {
@@ -7,10 +7,9 @@ const resolvers = {
     Query: {
         me: async(parent, { dayOfTheWeek }, context ) => {
             if( context.user ) {
-                return await User.findOne({ _id: context.user._id}).select('-__v -password').populate({path: 'workouts', match: {dayOfTheWeek: dayOfTheWeek }
-            });
-            }
-        },
+                return await User.findOne({ _id: context.user._id}).select('-__v -password')
+            };
+        }
     },
 
     Mutation: {

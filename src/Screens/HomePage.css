@@ -17,7 +17,7 @@ h1 {
 
 .homePage_selectHouseRouterButton {
     margin-top: 50px;
-    padding-bottom: 200px;
+    padding-bottom: 500px;
 }
 
 .homePage_selectHouses {
@@ -32,4 +32,9 @@ h1 {
 
 .homePage_selectHouses:hover {
     transform: scale(1.10);
+}
+
+
+.homePage_spacing {
+    padding-bottom: 200px;
 }
