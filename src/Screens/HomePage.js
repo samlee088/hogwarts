@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage.css';
 import {Link} from 'react-router-dom';
-
+import SignupForm from './SignupForm';
 const HomePage = () => {
 
     return(
@@ -14,6 +14,9 @@ const HomePage = () => {
                 <Link to='/SelectHouse'>
                     <button className='homePage_selectHouses'> Select House </button>
                 </Link>
+            </div>
+            <div>
+                <SignupForm/>
             </div>
         </div>
     )
