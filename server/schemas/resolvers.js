@@ -32,9 +32,9 @@ const resolvers = {
           },
           addHouse: async (parent, {house}, context) => {
             if(context.user) {
+                console.log(house)
+                console.log(context.user._id)
                 const user = await User.findOneAndUpdate(
-                    console.log(house),
-                    console.log(context.user._id),
                     {_id: context.user._id},
                     {$addToSet: {house: house }}
                 )
