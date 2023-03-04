@@ -23,3 +23,15 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_HOUSE = gql`
+  mutation addHouse(
+    $house: String
+  ) {
+      addHouse(
+        house: $house,
+      ) {
+        house
+      }
+  }
+`

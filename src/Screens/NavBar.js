@@ -23,7 +23,7 @@ const AppNavbar = () => {
           🪄 Hogwarts Battleground 🪄
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
+          <NavbarCollapse id='navbar'>
             <Nav className='ml-auto'>
               {/* Homepage Link */}
               <Nav.Link className='homeNavLink' as={Link} to='/'></Nav.Link>
@@ -41,7 +41,7 @@ const AppNavbar = () => {
                 </Nav.Link>
               )}
             </Nav>
-          </Navbar.Collapse>
+          </NavbarCollapse>
         </Container>
       </Navbar>
       {/* Set Modal Data Up */}

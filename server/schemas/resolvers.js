@@ -30,6 +30,20 @@ const resolvers = {
             const token = signToken(user);
             return { token, user };
           },
+          addHouse: async (parent, {house}, context) => {
+            if(context.user) {
+                const user = await User.findOneAndUpdate(
+                    console.log(house),
+                    console.log(context.user._id),
+                    {_id: context.user._id},
+                    {$addToSet: {house: house }}
+                )
+                console.log(user);
+
+                return user;
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          }
        
     }
 }
