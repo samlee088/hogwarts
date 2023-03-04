@@ -5,6 +5,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import './Houses.css';
 import {useMutation} from '@apollo/client';
 import {ADD_HOUSE} from '../utils/mutations';
+import {useNavigate} from 'react-router-dom';
 
 const Houses = ({fetchURL}) => {
 
@@ -24,6 +25,9 @@ const Houses = ({fetchURL}) => {
         fetchData();
     },[fetchURL])
 
+    let navigate = useNavigate();
+    let path ='/';
+
     const selectHouse = async (e) => {
         e.preventDefault();
         const {value} = e.target;
@@ -33,6 +37,8 @@ const Houses = ({fetchURL}) => {
             const {data} = await addHouse({
                 variables: { house: value }
             })
+
+            navigate(path);
 
         } catch(err) {
             console.log(err)

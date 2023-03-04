@@ -36,7 +36,7 @@ const resolvers = {
                 console.log(context.user._id)
                 const user = await User.findOneAndUpdate(
                     {_id: context.user._id},
-                    {$addToSet: {house: house }}
+                    {$set: {house: house }}
                 )
                 console.log(user);
 
