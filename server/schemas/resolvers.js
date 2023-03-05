@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Stats } = require('../models');
 const { signToken } = require('../utils/auth')
 
 const resolvers = {
@@ -43,8 +43,25 @@ const resolvers = {
                 return user;
             }
             throw new AuthenticationError('You need to be logged in!');
+          },
+          addStats: async (parent, {attack, defense, elixirs, darkMagic}, context ) => {
+            if(context.user) {
+                const stats = await Stats.create({attack, defense, elixirs, darkMagic});
+                    const user = await User.findOneAndUpdate(
+                        {_id: context.user._id},
+                        { $set: {  stats: stats._id}}
+                        // {$set:{ sets: {
+                        //     attack: attack,
+                        //     defense: defense,
+                        //     elixirs: elixirs,
+                        //     darkMagic: darkMagic }
+                        // }}
+                    )
+
+                return stats
+            }
+            throw new AuthenticationError('You need to be logged in!');
           }
-       
     }
 }
 

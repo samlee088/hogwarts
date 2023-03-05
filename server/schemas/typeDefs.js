@@ -7,7 +7,26 @@ const typeDefs = gql`
         username: String
         email: String
         house: String
+        spells: [Spell]
+        stats: [Stats]
     }
+
+    type Spell {
+        _id: ID!
+        spellOne: String
+        spellTwo: String
+        spellThree: String
+        spellFour: String
+    }
+
+    type Stats {
+        _id: ID!
+        attack: Float
+        defense: Float
+        elixirs: Float
+        darkMagic: Float
+    }
+
     type Auth {
         token: ID!
         user: User
@@ -21,9 +40,10 @@ const typeDefs = gql`
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
         addHouse(house: String): User
-        
+        addStats(attack: Float, defense: Float, elixirs: Float, darkMagic: Float) : Stats
     }
 `
+
 
 module.exports = typeDefs;
 

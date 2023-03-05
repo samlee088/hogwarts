@@ -18,6 +18,11 @@ h1 {
 .homePage_selectHouseRouterButton {
     margin-top: 50px;
     padding-bottom: 500px;
+    display: flex;
+    justify-content: space-around;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .homePage_selectHouses {

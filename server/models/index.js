@@ -1,3 +1,4 @@
 const User=require('./User');
-
-module.exports={User}
+const Spell=require('./Spell');
+const Stats=require('./Stats')
+module.exports={User, Spell,Stats}

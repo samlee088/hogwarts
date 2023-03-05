@@ -1,0 +1,14 @@
+.selectSpell_backGround {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    max-width: 1500px;
+    width: 100%;
+}
+
+.selectSpell_option_container {
+    margin-bottom: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}

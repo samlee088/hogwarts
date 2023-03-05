@@ -8,7 +8,7 @@ import SelectHouse from './Screens/SelectHouse';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Navbar from './Screens/NavBar';
-
+import SelectSpells from './Screens/SelectSpells';
 
 function App() {
 
@@ -52,6 +52,10 @@ function App() {
             <Route 
             path='/SelectHouse'
             element={<SelectHouse/>}
+            />
+            <Route
+            path='/SelectSpells'
+            element={<SelectSpells/>}
             />
           </Routes>
           </>

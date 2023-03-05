@@ -1,5 +1,6 @@
 const requests = {
-    houses: `/houses`
+    houses: `/houses`,
+    spells: `/Spells`
 }
 
 export default requests;

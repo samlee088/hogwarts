@@ -22,6 +22,18 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
+    spells: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Spell'
+      }
+    ],
+    stats: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Stats'
+      }
+    ]
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true }} ,
 );

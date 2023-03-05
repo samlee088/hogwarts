@@ -35,3 +35,25 @@ export const ADD_HOUSE = gql`
       }
   }
 `
+
+export const ADD_STATS = gql`
+  mutation addStats(
+    $attack: Float, 
+    $defense: Float,
+    $elixirs: Float,
+    $darkMagic: Float
+  ) {
+      addStats(
+        attack: $attack,
+        defense: $defense,
+        elixirs: $elixirs,
+        darkMagic: $darkMagic
+      )
+      {
+        attack
+        defense
+        elixirs
+        darkMagic
+      }
+  }
+`
