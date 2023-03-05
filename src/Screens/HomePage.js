@@ -19,7 +19,10 @@ const HomePage = () => {
                     <button className='homePage_selectHouses'> Select House </button>
                 </Link>
                 <Link to='/selectSpells'>
-                    <button className='homePage_selectHouses'> Select Spells  </button>
+                    <button className='homePage_selectHouses'>  Spells Full List  </button>
+                </Link>
+                <Link to='/ChooseSpells'>
+                    <button className='homePage_selectHouses'> Choose Spells </button>
                 </Link>
                 <Link to='/battleOne'>
                     <button className='homePage_selectHouses'> Battle One </button>

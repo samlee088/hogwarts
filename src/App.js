@@ -9,6 +9,7 @@ import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink, } from '@a
 import { setContext } from '@apollo/client/link/context';
 import Navbar from './Screens/NavBar';
 import SelectSpells from './Screens/SelectSpells';
+import ChooseSpells from './Screens/ChooseSpells';
 
 function App() {
 
@@ -46,16 +47,20 @@ function App() {
           <Navbar />
           <Routes>
             <Route
-            path='/'
-            element={<HomePage/>}
+              path='/'
+              element={<HomePage/>}
             />
             <Route 
-            path='/SelectHouse'
-            element={<SelectHouse/>}
+              path='/SelectHouse'
+              element={<SelectHouse/>}
             />
             <Route
-            path='/SelectSpells'
-            element={<SelectSpells/>}
+              path='/SelectSpells'
+              element={<SelectSpells/>}
+            />
+            <Route
+              path='/ChooseSpells'
+              element={<ChooseSpells/>}
             />
           </Routes>
           </>

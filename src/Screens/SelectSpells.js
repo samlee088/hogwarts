@@ -8,7 +8,7 @@ const SelectSpells = () => {
     return(
         <div className='selectSpell'>
             <div className='selectSpell_image_container'>   
-                <img className='selectSpell_backGround' src="https://images8.alphacoders.com/110/1102284.jpg" alt='harry potter homepage background'/>
+                <img className='selectSpell_backGround' src="https://media.npr.org/assets/img/2023/02/10/potions_final_wide-a44002be402930881b69756546deb424feee64fe-s1100-c50.jpg" alt='harry potter homepage background'/>
             </div>
             <div className='selectSpell_option_container'>
               <Spells  fetchURL={requests.spells}/>

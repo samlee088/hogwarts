@@ -34,6 +34,9 @@ const Spells = ({fetchURL}) => {
                             <Card.Text>
                                 Spell Effect: {spell.effect}
                             </Card.Text>
+                            <Card.Text>
+                                Id: {spell.id}
+                            </Card.Text>
                         </Card.Body>
                     </Card>
                 ))}
