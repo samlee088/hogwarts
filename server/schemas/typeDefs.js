@@ -12,11 +12,11 @@ const typeDefs = gql`
     }
 
     type Spell {
-        _id: ID!
-        spellOne: String
-        spellTwo: String
-        spellThree: String
-        spellFour: String
+        id: String
+        name: String
+        type: String
+        effect: String
+        damage: Int
     }
 
     type Stats {
@@ -33,7 +33,7 @@ const typeDefs = gql`
       }
   
     type Query {
-        me( dayOfTheWeek: String! ): User
+        me: User
         users: [User]
     }
     type Mutation {
@@ -41,6 +41,7 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         addHouse(house: String): User
         addStats(attack: Float, defense: Float, elixirs: Float, darkMagic: Float) : Stats
+        saveSpell(id: String, name: String, type: String, effect: String) : Spell
     }
 `
 

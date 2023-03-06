@@ -57,3 +57,24 @@ export const ADD_STATS = gql`
       }
   }
 `
+export const SAVE_SPELL = gql`
+  mutation saveSpell(
+    $id: String,
+    $name: String,
+    $type: String,
+    $effect: String
+  ) {
+    saveSpell(
+      id: $id,
+      name: $name,
+      type: $type,
+      effect: $effect
+    )
+    {
+      id
+      name
+      type
+      effect
+    }
+  }
+`

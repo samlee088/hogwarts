@@ -1,24 +1,28 @@
-const {Schema, model} = require('mongoose');
+const {Schema} = require('mongoose');
 
 const spellsSchema = new Schema({
 
-        spellOne: {
+        id: {
             type: String,
             require: false
         },
-        spellTwo: {
+        name: {
             type: String,
             require: false
         },
-        spellThree: {
+        type: {
             type: String,
             require: false
         },
-        spellFour: {
+        effect: {
             type: String,
+            require: false
+        },
+        damage: {
+            type: Number,
             require: false
         }
 });
 
-const Spell = model('Spell', spellsSchema);
-module.exports = Spell;
+// const Spell = model('Spell', spellsSchema);
+module.exports = spellsSchema;

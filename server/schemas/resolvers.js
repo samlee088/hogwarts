@@ -5,9 +5,9 @@ const { signToken } = require('../utils/auth')
 const resolvers = {
 
     Query: {
-        me: async(parent, { dayOfTheWeek }, context ) => {
+        me: async(parent, {}, context ) => {
             if( context.user ) {
-                return await User.findOne({ _id: context.user._id}).select('-__v -password')
+                return await User.findOne({ _id: context.user._id}).select('-__v -password').populate('stats');
             };
         }
     },
@@ -59,6 +59,17 @@ const resolvers = {
                     )
 
                 return stats
+            }
+            throw new AuthenticationError('You need to be logged in!');
+          },
+          saveSpell: async (parent, {id, name, type, effect}, context) => {
+            if(context.user) {
+                const user = await User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    {$set: {spells: {id, name, type, effect}}}
+                )
+
+                return user
             }
             throw new AuthenticationError('You need to be logged in!');
           }

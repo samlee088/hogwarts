@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
+const spellsSchema = require('./Spell');
 
 const userSchema = new Schema(
   {
@@ -22,12 +23,7 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
-    spells: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Spell'
-      }
-    ],
+    spells: [spellsSchema],
     stats: [
       {
         type: Schema.Types.ObjectId,
