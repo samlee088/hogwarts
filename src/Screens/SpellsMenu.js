@@ -19,18 +19,36 @@ const SpellsMenu = ({fetchURL}) => {
         fetchSpellData();
     },[fetchURL])
 
-    function saveSpellTrigger() {
+   async function saveSpellTrigger(e) {
+
+    const id = e.target.getAttribute('spell-id');
+    const name = e.target.getAttribute('spell-name');
+    const type = e.target.getAttribute('spell-type');
+    const effect = e.target.getAttribute('spell-effect');
+
+    console.log(id)
+    console.log(name);
+    console.log(type);
+    console.log(effect);
+
+        const {data} =  await saveSpell({
+            variables: {
+                id: id,
+                name : name,
+                type: type,
+                effect: effect
+            }
+        })
 
     }
     // console.log(spells);
     return(
         <div>
-
             <Card style={{ width: '18rem' }}>
                 <Card.Body>
                     <Card.Title> Spell Name: {spells.name} </Card.Title>
                     <Card.Text> Description: {spells.effect} </Card.Text>
-                    <button value={spells.id} onClick={saveSpellTrigger}> Select </button>
+                    <button value={spells.id} spell-id={spells.id} spell-name={spells.name} spell-type={spells.type} spell-effect={spells.effect} onClick={saveSpellTrigger}> Select </button>
                 </Card.Body>
              </Card>
         </div>

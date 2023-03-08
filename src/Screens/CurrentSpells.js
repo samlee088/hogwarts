@@ -10,14 +10,14 @@ const CurrentSpells = () => {
       return <h2>...Loading...</h2>
     }
 
-    const {spellsCount} = data?.me?.spells?.length
+    const spellsCount = data?.me?.spells?.length
 
     return(
         <div>
             {spellsCount ? (
                 <>
                     {data?.me?.spells?.map((spell) => (
-                        <div>
+                        <div key={spell.id}>
                             <h1>Current Spell</h1>
                             <h2>{spell.name}</h2>
                             <h3>{spell.type}</h3>

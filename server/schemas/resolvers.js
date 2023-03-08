@@ -66,7 +66,7 @@ const resolvers = {
             if(context.user) {
                 const user = await User.findOneAndUpdate(
                     {_id: context.user._id},
-                    {$set: {spells: {id, name, type, effect}}}
+                    {$addToSet: {spells: {id, name, type, effect}}}
                 )
 
                 return user
