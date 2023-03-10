@@ -4,11 +4,11 @@ import Card from 'react-bootstrap/Card';
 import {SAVE_SPELL} from '../utils/mutations';
 import {useMutation} from '@apollo/client';
 
-const SpellsMenu = ({fetchURL}) => {
+const SpellsMenu = ({fetchURL,refetch}) => {
     
     const [spells, setSpells]=useState([])
     const [saveSpell] = useMutation(SAVE_SPELL)
-
+    
     useEffect(()=> {
         async function fetchSpellData() {
             const request = await axios.get(fetchURL);
@@ -19,29 +19,28 @@ const SpellsMenu = ({fetchURL}) => {
         fetchSpellData();
     },[fetchURL])
 
-   async function saveSpellTrigger(e) {
+    async function saveSpellTrigger(e) {
 
-    const id = e.target.getAttribute('spell-id');
-    const name = e.target.getAttribute('spell-name');
-    const type = e.target.getAttribute('spell-type');
-    const effect = e.target.getAttribute('spell-effect');
+        const id = e.target.getAttribute('spell-id');
+        const name = e.target.getAttribute('spell-name');
+        const type = e.target.getAttribute('spell-type');
+        const effect = e.target.getAttribute('spell-effect');
 
-    console.log(id)
-    console.log(name);
-    console.log(type);
-    console.log(effect);
+        console.log(id)
+        console.log(name);
+        console.log(type);
+        console.log(effect);
 
-        const {data} =  await saveSpell({
-            variables: {
-                id: id,
-                name : name,
-                type: type,
-                effect: effect
-            }
-        })
-
+            const {data} =  await saveSpell({
+                variables: {
+                    id: id,
+                    name : name,
+                    type: type,
+                    effect: effect
+                }
+            })
+        refetch();
     }
-    // console.log(spells);
     return(
         <div>
             <Card style={{ width: '18rem' }}>

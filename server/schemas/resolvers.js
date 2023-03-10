@@ -72,6 +72,17 @@ const resolvers = {
                 return user
             }
             throw new AuthenticationError('You need to be logged in!');
+          },
+          removeSpell: async (parent, {id}, context) => {
+            if(context.user) {
+                console.log(context.user)
+                const spell = await User.findOneAndUpdate(
+                    {_id: context.user._id},
+                    {$pull: {spells: {id}}}
+                )
+                return spell;
+            }
+            throw new AuthenticationError('You need to be logged in!');
           }
     }
 }

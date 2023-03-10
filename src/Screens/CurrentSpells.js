@@ -1,10 +1,11 @@
 import React from 'react'
 import {useMuataion, useQuery} from '@apollo/client';
 import {QUERY_ME} from '../utils/queries';
+import RemoveSpellButton from './RemoveSpellButton';
 
 const CurrentSpells = () => {
 
-    const { loading, data } = useQuery(QUERY_ME);
+    const { loading, data, refetch } = useQuery(QUERY_ME);
 
     if(loading) {
       return <h2>...Loading...</h2>
@@ -22,6 +23,8 @@ const CurrentSpells = () => {
                             <h2>{spell.name}</h2>
                             <h3>{spell.type}</h3>
                             <h3>{spell.effect}</h3>
+                            <RemoveSpellButton id={spell.id} refetch={refetch} />
+
                         </div>
                     ))}
                 </>

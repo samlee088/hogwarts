@@ -42,6 +42,7 @@ const typeDefs = gql`
         addHouse(house: String): User
         addStats(attack: Float, defense: Float, elixirs: Float, darkMagic: Float) : Stats
         saveSpell(id: String, name: String, type: String, effect: String) : Spell
+        removeSpell(id: String) : Spell
     }
 `
 

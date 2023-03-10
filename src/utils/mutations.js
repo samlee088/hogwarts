@@ -78,3 +78,15 @@ export const SAVE_SPELL = gql`
     }
   }
 `
+export const REMOVE_SPELL = gql`
+  mutation removeSpell(
+    $id: String
+  ) {
+    removeSpell(
+      id: $id
+    )
+    {
+      id
+    }
+  }
+`
