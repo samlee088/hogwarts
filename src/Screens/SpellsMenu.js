@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card';
 import {SAVE_SPELL} from '../utils/mutations';
 import {useMutation} from '@apollo/client';
 
-const SpellsMenu = ({fetchURL,refetch}) => {
+const SpellsMenu = ({fetchURL, refetch, spellCount}) => {
     
     const [spells, setSpells]=useState([])
     const [saveSpell] = useMutation(SAVE_SPELL)
@@ -21,6 +21,10 @@ const SpellsMenu = ({fetchURL,refetch}) => {
 
     async function saveSpellTrigger(e) {
 
+        if(spellCount >=4) {
+            console.log('maxed out on spells')
+            return;
+        }
         const id = e.target.getAttribute('spell-id');
         const name = e.target.getAttribute('spell-name');
         const type = e.target.getAttribute('spell-type');

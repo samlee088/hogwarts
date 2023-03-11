@@ -46,24 +46,24 @@ const ChooseSpells = () => {
             <div>
                 <Container>
                     <Row>
-                        <Col sm><SpellsMenu fetchURL={requests.water_jet_spell} refetch={refetch}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.water_jet_spell} refetch={refetch} spellCount={spellsCount}/></Col>
                         <Col sm><SpellsMenu fetchURL={requests.albus_dumbledore_forceful_spell} refetch={refetch}/></Col>
                     </Row>
                     <Row>
-                        <Col sm><SpellsMenu fetchURL={requests.healing_spell} refetch={refetch}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.healing_spell} refetch={refetch} spellCount={spellsCount}/></Col>
                         <Col sm><SpellsMenu fetchURL={requests.arrow_shooting_spell} refetch={refetch}/></Col>
                     </Row>
                     <Row>   
-                        <Col sm><SpellsMenu fetchURL={requests.exploding_charm} refetch={refetch}/></Col>
-                        <Col sm><SpellsMenu fetchURL={requests.bombarda_maxima} refetch={refetch}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.exploding_charm} refetch={refetch} spellCount={spellsCount}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.bombarda_maxima} refetch={refetch} spellCount={spellsCount}/></Col>
                     </Row>
                     <Row>
-                        <Col sm><SpellsMenu fetchURL={requests.bubble_head_charm} refetch={refetch}/></Col>
-                        <Col sm><SpellsMenu fetchURL={requests.blasting_curse} refetch={refetch}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.bubble_head_charm} refetch={refetch} spellCount={spellsCount}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.blasting_curse} refetch={refetch} spellCount={spellsCount}/></Col>
                     </Row>
                     <Row>
-                        <Col sm><SpellsMenu fetchURL={requests.episkey} refetch={refetch}/></Col>
-                        <Col sm><SpellsMenu fetchURL={requests.fireStorm} refetch={refetch}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.episkey} refetch={refetch} spellCount={spellsCount}/></Col>
+                        <Col sm><SpellsMenu fetchURL={requests.fireStorm} refetch={refetch} spellCount={spellsCount}/></Col>
                         </Row>
                 </Container>
             </div>
